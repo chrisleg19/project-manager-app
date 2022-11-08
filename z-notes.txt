@@ -190,3 +190,4 @@ Slides: https://ps-rtt-sei.herokuapp.com/mod-2/week-11/day-1/slides/
 
 Flow of MERN-infrastructure:
 
+https://mongoosejs.com/docs/schematypes.html#dates 
