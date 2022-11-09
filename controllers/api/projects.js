@@ -12,4 +12,15 @@ async function create(req, res){
     }
 }
 
-module.exports = {create}
+async function listProjects(req, res){
+    const projects = await Project.find({})
+
+    res.json(projects)
+
+    console.log(projects)
+    
+
+    
+}
+
+module.exports = {create, listProjects}
