@@ -14,8 +14,7 @@ const deliverable = new Schema({
 const constraint = new Schema ({
     constraintName:{type: String},
     constraintBody: {type: String},
-    affectedDeliverable: {type:String},
-    showStopper: {type: Boolean, default: false}
+    showStopper: {type: Boolean}
 })
 
 

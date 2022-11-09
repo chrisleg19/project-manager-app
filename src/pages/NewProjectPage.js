@@ -46,6 +46,17 @@ const NewProjectPage = () =>{
 //     actual2Time: "",
 // })
 
+const[constraints, setConstraints] =useState([])
+
+const addConstraint = (event)=>{
+    event.preventDefault()
+    setConstraints([...constraints, constraint])
+    setConstraint({
+        constraintName: "",
+        constraintBody: "",
+        showStopper: false
+    })
+}
 
     const[constraint, setConstraint] = useState({
         constraintName: "",
@@ -103,7 +114,7 @@ const NewProjectPage = () =>{
                 budget: formData.budget,
                 targetDate: formData.targetDate,
                 deliverables: deliverables,
-                constraints: [constraint]
+                constraints: constraints
                 // deliverables: [deliverables1, deliverables2] ,
                 // constraints:[constraints1, constraints2]
             }
@@ -202,7 +213,7 @@ const NewProjectPage = () =>{
             <br/> */}
 
             
-            <form>
+            <form onSubmit={addConstraint}>
 
             <label>Constraint 1 Name:</label>
             <input type="text" name="constraintName" value={constraint.constraintName} onChange={handleConstraintChange}  />
@@ -211,7 +222,7 @@ const NewProjectPage = () =>{
             <input type="text" name="constraintBody" value={constraint.constraintBody} onChange={handleConstraintChange}  />
 
             <label>Constraint 1 Show Stopper:</label>
-            <input type="checkbox" name="showStopper" value={constraint.showStopper} onChange={handleConstraintChange}  />
+            <input type="checkbox" id="showStopper" name="showStopper" value={constraint.showStopper} onChange={handleConstraintChange}  />
 
             <button>Add Constraint</button>
             </form>
