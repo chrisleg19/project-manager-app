@@ -1,6 +1,7 @@
 import {checkToken} from "../utilities/users-service"
 import {listProjects} from "../utilities/projects-service"
 //bring in useState
+import {useState, useEffect} from "react"
 
 const ProjectHistoryPage = () =>{
 
@@ -10,13 +11,21 @@ const handleCheckToken = async () =>{
     console.log(expDate)
 }
 
+const [projects, setProjects] = useState(null)
+
+// useEffect(()=>{
+//     const projectsList = listProjects()
+//         console.log(projectsList)
+// },[])
+
 const showProjects = async (e) =>{
     //setState with list of projects
     e.preventDefault();
     try {
         const projectsList = await listProjects()
         console.log(projectsList)
-        
+        setProjects(...projectsList)
+        return projects
         
     } catch (error) {
         // console.log(error)
@@ -31,6 +40,8 @@ const showProjects = async (e) =>{
             <button onClick={handleCheckToken}>Check When My Login Expires</button>
 
             <button onClick={showProjects}>Show Projects</button>
+
+            
 
         </div>
     )
