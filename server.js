@@ -37,6 +37,7 @@ app.use(require('./config/checkToken'));
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 app.use("/api/projects", require("./routes/api/projects"))
+// app.use("/api/projects/:id", require("./routes/api/projects"))
 
 //the Catch All Route to serve the production app
     //NOTE: This is the route that connects the production app "hosted on database"

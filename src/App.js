@@ -5,10 +5,12 @@ import {Route, Routes} from "react-router-dom"
 import {getUser} from "./utilities/users-service"
 import AuthPage from "./pages/AuthPage";
 import NewProjectPage from "./pages/NewProjectPage";
-import ProjectHistoryPage from "./pages/ProjectHistoryPage";
+import ProjectsPage from "./pages/ProjectsPage";
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage"
+import SingleProject from "./pages/SingleProject"
 import './App.css';
+import projects from "./pages/ProjectsPage";
 
 
 function App() {
@@ -24,7 +26,8 @@ const [user, setUser] = useState(getUser())
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/projects/new" element={<NewProjectPage/>}/>
-        <Route path="/projects" element={<ProjectHistoryPage/>}/>
+        <Route path="/projects" element={<ProjectsPage project={projects}/>}/>
+        <Route path="/api/projects/:id" element={<SingleProject />}/>
       </Routes> 
       </> )
       : 

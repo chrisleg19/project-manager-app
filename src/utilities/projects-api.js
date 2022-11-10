@@ -10,6 +10,10 @@ export function listProjects(){
     return sendRequest(BASE_URL, "GET" )
 }
 
+export function findSingleProject(){
+    return sendRequest(BASE_URL + "/:_id", "GET")
+}
+
 async function sendRequest(url, method = 'GET', payload = null) {
     const options = { method };
     if (payload) {

@@ -18,9 +18,23 @@ async function listProjects(req, res){
     res.json(projects)
 
     console.log(projects)
-    
-
-    
 }
 
-module.exports = {create, listProjects}
+
+async function findSingleProject(req, res){
+    try {
+        const {id} = req.params
+        console.log("the request id",id)
+        const foundProject = await Project.findById(id)
+        ////res.render("pages/SingleProject", {proj: foundProject} )
+        console.log(foundProject, "CONTROLLERS FOUND PROJECT")
+        res.json(foundProject)
+        console.log("supposed to be foundProject",foundProject)
+        
+
+    } catch (error) {
+        res.status(400).json(error)
+    }
+}
+
+module.exports = {create, listProjects, findSingleProject}

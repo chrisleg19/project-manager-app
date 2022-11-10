@@ -9,3 +9,9 @@ export async function listProjects(){
     const listOfProjects = await projectsAPI.listProjects()
     return listOfProjects
 }
+
+export async function findSingleProject(){
+    const foundProject = await projectsAPI.findSingleProject()
+    console.log(foundProject, "FoundProject HERE")
+    return foundProject
+}
