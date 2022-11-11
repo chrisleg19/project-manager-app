@@ -26,7 +26,7 @@ const [user, setUser] = useState(getUser())
         <Route path="/" element={<HomePage/>}/>
         <Route path="/projects/new" element={<NewProjectPage/>}/>
         <Route path="/projects" element={<ProjectsPage project={projects}/>}/>
-        <Route path="/api/projects/:id" element={<SingleProject />}/>
+        <Route path="/projects/:id" element={<SingleProject />}/>
       </Routes> 
       </> )
       : 
