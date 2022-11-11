@@ -26,22 +26,6 @@ const projectSchema = new Schema({
     deliverables: [deliverable],
     constraints: [constraint]
     
-    // deliverables: [{type: String}],
-    // constraints: [{type: String}]
-    // deliverables: [{
-    //     name: {type: String},
-    //     body: {type: String},
-    //     estimatedCost: {type: Number},
-    //     actualCost: {type: Number},
-    //     estimatedTime: {type: Number},
-    //     actualTime: {type: Number}
-    // }],
-    // constraints: [{
-    //     name:{type: String},
-    //     body: {type: String},
-    //     affectedDeliverable: {type:String},
-    //     showStopper: {type: Boolean, default: false}
-    // }],
 })
 
 module.exports = mongoose.model("Project", projectSchema)

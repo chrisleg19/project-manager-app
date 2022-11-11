@@ -27,17 +27,9 @@ app.use(express.static(path.join(__dirname, "build")))
 // Be sure to mount before routes
 app.use(require('./config/checkToken'));
 
-//// API routes here, before the "catch all" route
-////     NOTE: These routes are handling the requests from the front end to the database (the Application Programming Interface (API))
-////         app.get("/orders", ()=>{
-////         })
-////         app.get("/orders/new", ()=>{
-////         })
-
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 app.use("/api/projects", require("./routes/api/projects"))
-// app.use("/api/projects/:id", require("./routes/api/projects"))
 
 //the Catch All Route to serve the production app
     //NOTE: This is the route that connects the production app "hosted on database"

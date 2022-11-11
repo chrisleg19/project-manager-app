@@ -26,7 +26,6 @@ async function findSingleProject(req, res){
         const {id} = req.params
         console.log("the request id",id)
         const foundProject = await Project.findById(id)
-        ////res.render("pages/SingleProject", {proj: foundProject} )
         console.log(foundProject, "CONTROLLERS FOUND PROJECT")
         res.json(foundProject)
         console.log("supposed to be foundProject",foundProject)
